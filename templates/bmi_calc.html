@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='Chrome'>
+    <title>BMI calculator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href="/static/css/new.css">
+    <link rel='stylesheet' href="/static/css/pure-min.css">
+</head>
+
+
+<body>
+    <div class="banner">
+        <h1 class="banner-head">
+            Welcome to the best BMI calculator
+        </h1>
+    </div>
+
+    <div>
+        <p>Please enter your info:</p>
+
+        <form class="pure-form" method="POST" action="/bmi">
+            Name: <input type="text" name="username"><br><br>
+            Wheight: <input type="text" name="weight"><br><br>
+            Height (in cm): <input type="text" name="height"><br><br>
+            <button type="calculate" class="pure-button pure-button-primary" value="Submit">
+                Submit</button>
+        </form>
+    </div>
+    <div>
+        <br>
+        {%if user_name != 'user X'%}
+        {{user_name + " your BMI is: "+ bmi}}
+        {%endif%}
+    </div>
+    <div>
+        <form action="/">
+            <button class="pure-button pure-button-primary">Go Home</button>
+        </form>
+    </div>
+</body>
+
+</html>
